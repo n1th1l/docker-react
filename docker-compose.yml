@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react-client:
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - /usr/dev-app/node_modules
+      - ./:/usr/dev-app
